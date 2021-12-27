@@ -2,28 +2,35 @@ import React, { SyntheticEvent } from 'react';
 import styled from 'styled-components';
 
 export interface ButtonProps {
+  label?: string,
   disabled?: boolean;
   htmlType?: 'button' | 'submit' | 'reset';
   onClick?: (() => void) | ((e: SyntheticEvent) => void);
   icon?: React.ReactNode,
-  children?: React.ReactNode;
 };
 
 export const StyledButton = styled.button`
-  border: none;
   display: flex;
   justify-content: center;
-  color: ${props => props.theme.primary};
-  background-color: ${props => props.theme.accent};
-  font-size: 16px;
-  padding: 8px 16px;
+  font-size: ${props => props.theme.fontSizeBase};
+  font-family: ${props => props.theme.fontFamily};
+  color: ${props => props.theme.colors.primary};
   line-height: 1.5;
-  border-radius: 20px;
-  font-family: 'Gilroy';
-  cursor: pointer;
-  &:hover,
+  background-color: ${props => props.theme.colors.accent};
+  border: none;
+  border-radius: ${props => props.theme.button.borderRadius};
+  padding: ${props => `${props.theme.spacing * 1}px ${props.theme.spacing * 2}px`};
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  &:hover, 
   &:focus {
-    background-color: ${props => props.theme.accentDarken}
+    background-color: ${props => props.theme.colors.accent20};
+  }
+  &:active {
+    background-color: ${props => props.theme.colors.accentLight};
+  }
+  &:disabled {
+    background-color: ${props => props.theme.colors.secondary20};
+    color: ${props => props.theme.colors.secondary};
   }
 `;
 
@@ -33,8 +40,8 @@ export const StyledButtonIcon = styled.div`
 `;
 
 export const Button = ({
-  children,
-  htmlType,
+  label = 'Click me!',
+  htmlType = 'button',
   onClick,
   icon,
   disabled = false,
@@ -46,7 +53,7 @@ export const Button = ({
       disabled={disabled}
     >
       {icon && <StyledButtonIcon>{icon}</StyledButtonIcon>}
-      {children}
+      {label}
     </StyledButton>
   );
 };

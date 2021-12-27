@@ -1,12 +1,15 @@
 import React from 'react';
+import useTheme from '../hooks/useTheme';
 import { TIconProps } from './utils'
 
 const Edit = ({
   width = '24',
   height = '24',
   fill = 'none',
-  stroke = '#212531'
+  stroke, 
 }: TIconProps) => {
+  const theme = useTheme();
+  stroke = stroke ?? theme.colors.primary;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
