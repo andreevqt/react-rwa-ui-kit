@@ -1,13 +1,14 @@
-import {ThemeProvider} from 'styled-components';
-import {addDecorator} from '@storybook/react';
-import {withThemes} from '@react-theming/storybook-addon';
+import { ThemeProvider } from 'styled-components';
+import { addDecorator } from '@storybook/react';
+import '../src/fonts/fonts.css';
+import '../src/index.css';
 
-import {dark, light} from '../src/theme';
+import theme from '../src/theme';
 
-addDecorator(withThemes(ThemeProvider, [light, dark]));
+addDecorator((story) => <ThemeProvider theme={theme.dark} >{story()}</ThemeProvider>);
 
 export const parameters = {
-  actions: {argTypesRegex: "^on[A-Z].*"},
+  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,

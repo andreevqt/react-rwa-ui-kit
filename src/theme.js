@@ -1,10 +1,13 @@
-export const light = {
-  name: '',
-  primary: `#000514`,
-  accent: '#FFCC33'
-}
-
-export const dark = {
-  name: '',
-  primary: ''
-}
+export default {
+  light: {
+    name: '',
+    primary: '#212531',
+    accent: '#FFCC33',
+  },
+  dark: {
+    name: '',
+    primary: '#212531',
+    accent: '#FFCC33',
+    accentDarken: '#F4B700'
+  }
+};

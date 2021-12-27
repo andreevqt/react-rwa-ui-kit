@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, ButtonProps } from './button';
+import Edit from '../../icons/edit'
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
@@ -18,6 +19,13 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 
 Primary.args = {
-  children: `Click me`
+  children: `Отправить комментарий`
 };
+
+export const WithIcon = Template.bind({});
+
+WithIcon.args = {
+  icon: <Edit/>,
+  children: `Создать запись`
+}
 
