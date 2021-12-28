@@ -1,4 +1,4 @@
-export type TIconProps = {
+export interface TIconProps {
   width?: string,
   height?: string,
   fill?: string,

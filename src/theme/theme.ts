@@ -8,8 +8,9 @@ export type TTheme = {
     secondary20: string,
     base: string,
     bg: string,
+    alert: string,
   },
-  button: {
+  uiElements: {
     borderRadius: string,
   },
   spacing: number,

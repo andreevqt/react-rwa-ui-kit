@@ -12,13 +12,10 @@ export interface ButtonProps {
 export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
-  font-size: ${props => props.theme.fontSizeBase};
-  font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.colors.primary};
-  line-height: 1.5;
   background-color: ${props => props.theme.colors.accent};
   border: none;
-  border-radius: ${props => props.theme.button.borderRadius};
+  border-radius: ${props => props.theme.uiElements.borderRadius};
   padding: ${props => `${props.theme.spacing * 1}px ${props.theme.spacing * 2}px`};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
   &:hover, 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { TIconProps } from './utils'
 
-const Edit = ({
+const Alert = ({
   width = '24',
   height = '24',
 }: TIconProps) => {
@@ -18,17 +18,10 @@ const Edit = ({
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2"
-        d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"
-      />
-      <path
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M18.5 2.5a2.121 2.121 0 113 3L12 15l-4 1 1-4 9.5-9.5z"
+        d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM12 8v4M12 16h.01"
       />
     </svg>
   );
 };
 
-export default Edit;
+export default Alert;

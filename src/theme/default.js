@@ -17,15 +17,17 @@ const colors = {
   secondary: '#414962',
   secondary20: '#A0AABA',
   bg: primary,
+  alert: '#FF2962',
+  success: '#62FF29',
 };
 
-const button = {
+const uiElements = {
   borderRadius: '20px',
 };
 
 export default {
   colors,
-  button, 
+  uiElements, 
   spacing,
   borderRadius,
   fontSizeBase,

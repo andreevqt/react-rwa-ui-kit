@@ -13,10 +13,9 @@ export default {
   */
   title: 'Tabs',
   component: Tabs,
-  subcomponents: { Tab }, //👈 Adds the ListItem component as a subcomponent
 } as ComponentMeta<typeof Tabs>;
 
-export const TabsGroup: ComponentStory<typeof Tab> = (args) => {
+export const TabsGroup: ComponentStory<typeof Tabs> = (args) => {
   const [tabValue, setTabValue] = useState('one');
   const onChange = (value: string) => {
     setTabValue(value);
