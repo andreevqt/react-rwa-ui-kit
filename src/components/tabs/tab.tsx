@@ -8,9 +8,9 @@ export interface TabProps {
 }
 
 const StyledTab = styled.div<{ active: boolean }>`
-  border-bottom: 2px solid ${props => props.active ? props.theme.colors.accent : 'transparent'};
-  padding: ${props => `${props.theme.spacing * 1}px ${props.theme.spacing * 3}px`};
-  background-color: ${props => props.theme.colors.bg};
+  border-bottom: 2px solid ${({ active, theme }) => active ? theme.accentColor.normal : 'transparent'};
+  padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 3}px`};
+  background-color: ${({ theme }) => theme.bgColor.normal};
   cursor: pointer;
 `;
 
@@ -20,7 +20,10 @@ const Tab = ({
 }: TabProps) => {
   const { value: activeValue, onChange } = useTabs();
   return (
-    <StyledTab active={activeValue === value} onClick={() => onChange(value)}>
+    <StyledTab
+      active={activeValue === value}
+      onClick={() => onChange(value)}
+    >
       {label}
     </StyledTab>
   )

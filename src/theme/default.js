@@ -1,35 +1,53 @@
-
-const spacing = 8;
-
-const borderRadius = '16px';
-
-const fontSizeBase = '16px';
-const fontFamily = 'Gilroy';
-
-const primary = '#212531';
-
-const colors = {
-  base: '#fff',
-  primary,
-  accent: '#FFCC33',
-  accentLight: '#FFD65B',
-  accent20: '#F4B700',
-  secondary: '#414962',
-  secondary20: '#A0AABA',
-  bg: primary,
-  alert: '#FF2962',
-  success: '#62FF29',
+const primaryColor = {
+  normal: '#212531',
 };
 
-const uiElements = {
-  borderRadius: '20px',
+const accentColor = {
+  normal: '#FFCC33',
+  normalHover: '#F4B700',
+  normalActive: '#FFD65B',
+};
+
+const alertColor = {
+  normal: '#FF2962',
+};
+
+const successColor = {
+  normal: '#62FF29',
+};
+
+const secondaryColor = {
+  normal: '#414962',
+  dark: '#A0AABA',
+};
+
+const button = {
+  borderRadius: '50%',
+};
+
+const base = {
+  borderRadius: '16px',
+  fontFamily: 'Gilroy',
+  fontSize: '16px',
+  spacing: 8,
+};
+
+const bodyColor = {
+  normal: '#fff',
+}
+
+const bgColor = {
+  normal: '#212531',
 };
 
 export default {
-  colors,
-  uiElements, 
-  spacing,
-  borderRadius,
-  fontSizeBase,
-  fontFamily,
+  primaryColor,
+  accentColor,
+  alertColor,
+  successColor,
+  secondaryColor,
+  bodyColor,
+  bgColor,
+  button,
+  base,
 };

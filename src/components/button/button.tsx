@@ -10,24 +10,28 @@ export interface ButtonProps {
 };
 
 export const StyledButton = styled.button`
+  border: none;
   display: flex;
   justify-content: center;
-  color: ${props => props.theme.colors.primary};
-  background-color: ${props => props.theme.colors.accent};
-  border: none;
-  border-radius: ${props => props.theme.uiElements.borderRadius};
-  padding: ${props => `${props.theme.spacing * 1}px ${props.theme.spacing * 2}px`};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 2}px`};
+  border-radius: ${({ theme }) => theme.button.borderRadius};
+  cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
+
+  color: ${({ theme }) => theme.primaryColor.normal};
+  background-color: ${({ theme }) => theme.accentColor.normal};
+
   &:hover, 
   &:focus {
-    background-color: ${props => props.theme.colors.accent20};
+    background-color: ${({ theme }) => theme.accentColor.normalHover};
   }
+
   &:active {
-    background-color: ${props => props.theme.colors.accentLight};
+    background-color: ${({ theme }) => theme.accentColor.normalActive};
   }
+
   &:disabled {
-    background-color: ${props => props.theme.colors.secondary20};
-    color: ${props => props.theme.colors.secondary};
+    background-color: ${({ theme }) => theme.secondaryColor.normal};
+    color: ${({ theme }) => theme.secondaryColor.dark};
   }
 `;
 

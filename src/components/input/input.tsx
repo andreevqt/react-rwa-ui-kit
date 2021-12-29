@@ -2,7 +2,13 @@ import React, { SyntheticEvent } from 'react';
 import styled from 'styled-components';
 import Alert from '../../icons/alert';
 import Check from '../../icons/check';
-import {getColor} from './utils';
+
+const getColor = (props: any, defaultColor: string = 'inherit'): string =>
+  props.state === 'invalid'
+    ? props.theme.alertColor.normal
+    : props.state === 'success'
+      ? props.theme.successColor.normal
+      : defaultColor;
 
 type State = 'invalid' | 'success' | 'default';
 
@@ -10,43 +16,43 @@ const StyledInputWrapper = styled.div`
   display: block;
   label {
     display: inline-block;
-    padding-left: ${props => `${props.theme.spacing * 2}px`};
-    margin-bottom: ${props => `${props.theme.spacing / 2}px`};
+    padding-left: ${({ theme }) => `${theme.spacing * 2}px`};
+    margin-bottom: ${({ theme }) => `${theme.spacing / 2}px`};
   }
 `;
 
-const StyledInput = styled.div<{ state?: State }>`
+const StyledInput = styled.div<{ state: State }>`
   position: relative;
   input, textarea {
     display: block;
     width: 100%;
-    border-color: ${props => getColor(props, 'transparent')};
     border-width: 2px;
     border-style: solid;
-    border-radius: ${props => props.theme.uiElements.borderRadius};
-    background-color: ${props => props.theme.colors.primary};
-    color: ${props => props.theme.colors.base};    
-    padding: ${props => `${props.theme.spacing * 1}px ${props.theme.spacing * 2}px`};
+    border-color: ${(props) => getColor(props, 'transparent')};
+    border-radius: ${({ theme }) => theme.base.borderRadius};
+    background-color: ${({ theme }) => theme.primaryColor.normal};
+    color: ${({ theme }) => theme.bodyColor.normal};    
+    padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 2}px`};
     &:focus {
       outline: none;
-      border-color: ${props => props.theme.colors.accent};
+      border-color: ${({ theme }) => theme.accentColor.normal};
     }
     &::placeholder {
-      color: ${props => props.theme.colors.secondary20};
+      color: ${({ theme }) => theme.secondaryColor.dark};
     }
   }
 `;
 
 const StyledInfo = styled.div<{ invalid?: boolean }>`
-  color: ${props => props.invalid ? props.theme.colors.alert : props.theme.colors.success};
-  margin-top: ${props => `${props.theme.spacing / 2}px`};
-  padding-left: ${props => `${props.theme.spacing * 2}px`};
+  color: ${({ invalid, theme }) => invalid ? theme.alertColor.normal : theme.successColor.normal};
+  margin-top: ${({ theme }) => `${theme.base.spacing / 2}px`};
+  padding-left: ${({ theme }) => `${theme.base.spacing * 2}px`};
 `;
 
 const StyledIcon = styled.div<{ state?: State }>`
   position: absolute;
   color: ${props => getColor(props)};
-  right:  ${props => `${props.theme.spacing * 2}px`};
+  right: ${({ theme }) => `${theme.base.spacing * 2}px`};
   top: calc(50% - 24px / 2);
   font-size: 0;
 `;
