@@ -13,7 +13,7 @@ export const StyledButton = styled.button`
   border: none;
   display: flex;
   justify-content: center;
-  padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 2}px`};
+  padding: ${({ theme }) => `${theme.base.spacing * 2}px ${theme.base.spacing * 4}px`};
   border-radius: ${({ theme }) => theme.button.borderRadius};
   cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
 
@@ -36,7 +36,7 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledButtonIcon = styled.div`
-  margin-right: 5px;
+  margin-right: ${({theme}) => theme.base.spacing}px;
   font-size: 0;
 `;
 

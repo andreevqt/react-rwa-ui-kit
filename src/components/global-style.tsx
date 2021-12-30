@@ -36,8 +36,8 @@ const GlobalStyle = createGlobalStyle<{
   }
 
   body {
-    color: ${props => props.theme.colors.base};
-    font-size: ${props => props.theme.fontSizeBase};
+    color: ${({ theme }) => theme.bodyColor.normal};
+    font-size: ${({ theme }) => theme.base.fontSize};
     line-height: 1.5;
     font-family: 'Gilroy';
   }
@@ -45,7 +45,7 @@ const GlobalStyle = createGlobalStyle<{
   input,
   button,
   textarea {
-    font-family: ${props => props.theme.fontFamily};
+    font-family: ${({ theme }) => theme.base.fontFamily};
     line-height: 1.5;
     font-size: 16px;
   }

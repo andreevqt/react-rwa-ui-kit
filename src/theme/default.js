@@ -22,14 +22,18 @@ const secondaryColor = {
 };
 
 const button = {
-  borderRadius: '50%',
+  borderRadius: '20px',
 };
+
+const input = {
+  borderRadius: '20px',
+}
 
 const base = {
   borderRadius: '16px',
   fontFamily: 'Gilroy',
   fontSize: '16px',
-  spacing: 8,
+  spacing: 4,
 };
 
 const bodyColor = {
@@ -50,4 +54,5 @@ export default {
   bgColor,
   button,
   base,
+  input,
 };

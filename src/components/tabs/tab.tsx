@@ -9,7 +9,7 @@ export interface TabProps {
 
 const StyledTab = styled.div<{ active: boolean }>`
   border-bottom: 2px solid ${({ active, theme }) => active ? theme.accentColor.normal : 'transparent'};
-  padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 3}px`};
+  padding: ${({ theme }) => `${theme.base.spacing * 2}px ${theme.base.spacing * 6}px`};
   background-color: ${({ theme }) => theme.bgColor.normal};
   cursor: pointer;
 `;

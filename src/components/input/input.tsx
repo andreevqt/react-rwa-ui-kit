@@ -16,8 +16,8 @@ const StyledInputWrapper = styled.div`
   display: block;
   label {
     display: inline-block;
-    padding-left: ${({ theme }) => `${theme.spacing * 2}px`};
-    margin-bottom: ${({ theme }) => `${theme.spacing / 2}px`};
+    padding-left: ${({ theme }) => `${theme.base.spacing * 4}px`};
+    margin-bottom: ${({ theme }) => `${theme.base.spacing}px`};
   }
 `;
 
@@ -29,10 +29,10 @@ const StyledInput = styled.div<{ state: State }>`
     border-width: 2px;
     border-style: solid;
     border-color: ${(props) => getColor(props, 'transparent')};
-    border-radius: ${({ theme }) => theme.base.borderRadius};
+    border-radius: ${({ theme }) => theme.input.borderRadius};
     background-color: ${({ theme }) => theme.primaryColor.normal};
     color: ${({ theme }) => theme.bodyColor.normal};    
-    padding: ${({ theme }) => `${theme.base.spacing * 1}px ${theme.base.spacing * 2}px`};
+    padding: ${({ theme }) => `${theme.base.spacing * 2}px ${theme.base.spacing * 4}px`};
     &:focus {
       outline: none;
       border-color: ${({ theme }) => theme.accentColor.normal};
@@ -45,8 +45,8 @@ const StyledInput = styled.div<{ state: State }>`
 
 const StyledInfo = styled.div<{ invalid?: boolean }>`
   color: ${({ invalid, theme }) => invalid ? theme.alertColor.normal : theme.successColor.normal};
-  margin-top: ${({ theme }) => `${theme.base.spacing / 2}px`};
-  padding-left: ${({ theme }) => `${theme.base.spacing * 2}px`};
+  margin-top: ${({ theme }) => `${theme.base.spacing}px`};
+  padding-left: ${({ theme }) => `${theme.base.spacing * 4}px`};
 `;
 
 const StyledIcon = styled.div<{ state?: State }>`
